@@ -1,45 +1,112 @@
 {
-  "name": "roots-contentful",
-  "description": "An extension for using roots with the API-driven Contentful CMS",
-  "version": "0.0.9",
-  "author": "Carrot Creative",
+  "_args": [
+    [
+      {
+        "raw": "roots-contentful@0.0.9",
+        "scope": null,
+        "escapedName": "roots-contentful",
+        "name": "roots-contentful",
+        "rawSpec": "0.0.9",
+        "spec": "0.0.9",
+        "type": "version"
+      },
+      "/Users/brent/projects/worth.systems"
+    ]
+  ],
+  "_from": "roots-contentful@0.0.9",
+  "_id": "roots-contentful@0.0.9",
+  "_inCache": true,
+  "_location": "/roots-contentful",
+  "_nodeVersion": "4.1.1",
+  "_npmUser": {
+    "name": "kylemac",
+    "email": "kyle@carrotcreative.com"
+  },
+  "_npmVersion": "2.14.4",
+  "_phantomChildren": {
+    "contentful-resolve-response": "0.1.2"
+  },
+  "_requested": {
+    "raw": "roots-contentful@0.0.9",
+    "scope": null,
+    "escapedName": "roots-contentful",
+    "name": "roots-contentful",
+    "rawSpec": "0.0.9",
+    "spec": "0.0.9",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/roots-contentful/-/roots-contentful-0.0.9.tgz",
+  "_shasum": "b7df724ebbd4a00cfa250faa5c56fd0221860656",
+  "_shrinkwrap": null,
+  "_spec": "roots-contentful@0.0.9",
+  "_where": "/Users/brent/projects/worth.systems",
+  "author": {
+    "name": "Carrot Creative"
+  },
   "bugs": {
     "url": "https://github.com/carrot/roots-contentful/issues"
   },
   "dependencies": {
-    "contentful": "^4.2.1",
-    "lodash": "^4.13.1",
-    "pluralize": "^3.0.0",
+    "contentful": "^1.1.5",
+    "lodash": "^3.10.1",
+    "pluralize": "^1.2.1",
     "roots-util": "0.1.x",
     "string": "^3.1.3",
     "when": "3.7.x"
   },
+  "description": "An extension for using roots with the API-driven Contentful CMS",
   "devDependencies": {
-    "chai": "3.5.0",
-    "chai-as-promised": "6.0.0",
-    "coffee-script": "1.12.4",
+    "chai": "3.4.1",
+    "chai-as-promised": "5.1.0",
+    "coffee-script": "1.10.0",
     "coveralls": "2.x",
-    "istanbul": "0.4.5",
-    "mocha": "2.5.3",
-    "mockery": "1.7.x",
-    "roots": "5.0.0"
+    "istanbul": "0.4.1",
+    "mocha": "2.3.4",
+    "mockery": "1.4.x",
+    "roots": "3.1.0"
   },
   "directories": {
     "test": "test"
   },
+  "dist": {
+    "shasum": "b7df724ebbd4a00cfa250faa5c56fd0221860656",
+    "tarball": "https://registry.npmjs.org/roots-contentful/-/roots-contentful-0.0.9.tgz"
+  },
+  "gitHead": "840ca65be2c277951e6cbc0bff2c8e469e2de8f2",
   "homepage": "https://github.com/carrot/roots-contentful",
   "keywords": [
     "roots-extension"
   ],
   "license": "MIT",
   "main": "lib",
+  "maintainers": [
+    {
+      "name": "joshrowley",
+      "email": "joshua.f.rowley@gmail.com"
+    },
+    {
+      "name": "kylemac",
+      "email": "kyle@carrotcreative.com"
+    },
+    {
+      "name": "slang",
+      "email": "slang800@gmail.com"
+    }
+  ],
+  "name": "roots-contentful",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
-    "url": "https://github.com/carrot/roots-contentful.git"
+    "url": "git+https://github.com/carrot/roots-contentful.git"
   },
   "scripts": {
     "coverage": "make build; NODE_ENV=test istanbul cover ./node_modules/mocha/bin/_mocha; make unbuild; open coverage/lcov-report/index.html;",
     "coveralls": "make build; make coveralls; make unbuild;",
     "test": "mocha"
-  }
+  },
+  "version": "0.0.9"
 }

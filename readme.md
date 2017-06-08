@@ -1,7 +1,5 @@
 # Roots Contentful
 
-[![Gitter Chat](https://badges.gitter.im/carrot/roots-contentful.svg)](https://gitter.im/carrot/roots-contentful)
-
 [![npm](http://img.shields.io/npm/v/roots-contentful.svg?style=flat)](https://badge.fury.io/js/roots-contentful) [![tests](http://img.shields.io/travis/carrot/roots-contentful/master.svg?style=flat)](https://travis-ci.org/carrot/roots-contentful) [![dependencies](http://img.shields.io/gemnasium/carrot/roots-contentful.svg?style=flat)](https://gemnasium.com/carrot/roots-contentful)
 [![devDependencies](https://img.shields.io/david/dev/carrot/roots-contentful.svg)](https://gemnasium.com/carrot/roots-contentful)
 [![Coverage Status](https://img.shields.io/coveralls/carrot/roots-contentful.svg)](https://coveralls.io/r/carrot/roots-contentful?branch=master)
@@ -63,22 +61,6 @@ A `contentful` view helper object will be passed into every view containing your
         p= markdown(post.body)
 ```
 
-Note: for the above `markdown` function to parse your `post.body`, you need to install a markdown parser for roots to work with. Using [marked](https://www.npmjs.com/package/marked) as an example, do the following:
-
-- `npm install marked --save`
-
-And then in `app.coffee`:
-
-```coffee
-contentful = require 'roots-contentful'
-marked     = require 'marked'
-
-locals:
-  markdown: marked
-```
-
-See the [roots documentation](http://roots.cx/docs/configuration) for more details.
-
 Note: if you have [Links](https://www.contentful.com/developers/docs/concepts/links/) in your content more than 10 levels deep (the max for the `include` parameter), then unresolved links can be returned.
 
 #### Single Entry Views
@@ -106,8 +88,6 @@ And can be accessed in your view like this:
 ```jade
   h2= entry.title
   p= markdown(entry.body)
-  if entry.image
-    img(src!= asset(entry.image)
 ```
 
 ### Configuration Options
@@ -147,23 +127,7 @@ Optional. Path relative to the roots project of a template for a single entry vi
 
 #### filters
 
-Optional. Takes an object with different search and filter criteria. See examples of how to structure the object in [Contentful's docs](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters).
-
-For example, the following [limits](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/limit) the API response to 5 entries, [filters](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/array-equalityinequality/query-entries) by the `feature` field and [orders](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/order) items in the response by the `sys.createdAt` property. Notice the minus sign, which reverses the sort order.
-
-```coffee
-content_types:
-  blog_posts:
-    id: 'xxxxxx'
-    template: 'views/_post.jade'
-    path: (entry) -> "blog/#{entry.permalink}"
-    filters: {
-               'limit': '5',
-               'fields.feature': 'true',
-               'order': '-sys.createdAt'
-             }
-    transform: transformFunction
-```
+Optional. Takes an object with different filter criteria, see examples of how to structure the object in [Contentful's docs](https://www.contentful.com/developers/documentation/content-delivery-api/javascript/#search-filter).
 
 #### path
 
