@@ -198,7 +198,7 @@ module.exports = (opts) ->
             @roots.config.locals.entry = _.assign({}, entry, { _url: url })
             compiler.renderFile(template, @roots.config.locals)
               .then((res) =>
-                @roots.config.locals.entry = null
+                # @roots.config.locals.entry = null
                 @util.write(url, res.result)
               )
 
